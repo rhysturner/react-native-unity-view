@@ -10,9 +10,9 @@
     "postinstall": "node ../scripts/examples_postinstall.js"
   },
   "dependencies": {
+    "@asmadsen/react-native-unity-view": "^0.0.7",
     "react": "16.8.1",
-    "react-native": "0.61.3",
-    "@asmadsen/react-native-unity-view": "file:../"
+    "react-native": "0.61.3"
   },
   "devDependencies": {
     "@babel/core": "^7.5.0",

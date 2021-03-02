@@ -26,12 +26,15 @@ using System.IO;
 using UnityEditor;
 using UnityEditor.Callbacks;
 using UnityEditor.iOS.Xcode;
+using UnityEngine;
 
 public static class XcodePostBuild {
     private const string TouchedMarker = "https://github.com/asmadsen/react-native-unity-view";
 
-    [PostProcessBuild]
+    //[PostProcessBuild]
+    [PostProcessBuildAttribute(1)]
     public static void OnPostBuild(BuildTarget target, string pathToBuiltProject) {
+        Debug.Log( pathToBuiltProject );
         if (target != BuildTarget.iOS) {
             return;
         }
@@ -248,6 +251,7 @@ public static class XcodePostBuild {
             };
 
         });
+        Debug.Log("EditUnityAppControllerMM");
     }
 
     private static void EditUnityViewMM(string path) {
