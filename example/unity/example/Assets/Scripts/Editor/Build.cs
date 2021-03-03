@@ -42,6 +42,7 @@ public class Build : MonoBehaviour {
 
         //var options = BuildOptions.AcceptExternalModificationsToPlayer;
         var options = BuildOptions.AllowDebugging;
+        EditorUserBuildSettings.exportAsGoogleAndroidProject = true;
 
         var report = BuildPipeline.BuildPlayer(
             GetEnabledScenes(),
@@ -55,6 +56,7 @@ public class Build : MonoBehaviour {
         }
         
         Copy(buildPath, androidExportPath);
+        Debug.Log("!!! Build Path: " + buildPath + " Android Export Path: " + androidExportPath);
         // Modify build.gradle
         var build_file = Path.Combine(androidExportPath, "build.gradle");
         var build_text = File.ReadAllText(build_file);
